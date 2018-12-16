@@ -12,6 +12,28 @@ class ViewController: UIViewController {
     
 //    Explicit
     var name: String = "Turbo"
+    var oldname: String = "This is Label"
+    var status: Bool = true
+    var message: String = ""
+    
+    
+    @IBOutlet weak var messageTextField: UITextField!
+    
+    
+    
+    @IBAction func messageButton(_ sender: Any) {
+        
+        
+        message = messageTextField.text!
+        titleLabel.text = message
+        messageTextField.text = ""
+        
+
+
+
+    }
+
+    
     
     
     
@@ -21,7 +43,16 @@ class ViewController: UIViewController {
         
         
         print("You Click Change Button")
-        titleLabel.text = name
+        
+
+        
+        if status {
+            titleLabel.text = name
+        } else {
+            titleLabel.text = oldname
+        }
+          status = !status
+        
         
     }
     
